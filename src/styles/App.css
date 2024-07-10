@@ -1,0 +1,60 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+html, body {
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    color: white; /* Optional: Set text color */
+}
+
+html,
+body,
+#root {
+	/* height: 100%; */
+	/* margin: 0;
+	padding: 0;
+	box-sizing: border-box; */
+}
+
+.main-container {
+	background-color: #95ebe7; /*a7dbd8*/
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+}
+
+root {
+	padding: 10rem 10rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'Lexend Mega', sans-serif;
+}
+
+p{
+	font-family: 'Exo 2', sans-serif;
+}
+
+.rectangle-1-home {
+	box-shadow: 15px 15px 0px rgb(105, 27, 154, 0.9);
+}
+.rectangle-2-home {
+	box-shadow: 15px 15px 0px rgb(191, 23, 101, 0.9);
+}
+.rectangle-home-btn {
+	box-shadow: 8px 15px 0px rgba(0, 0, 0, 1);
+}
+.cursor-grabbing {
+  cursor: grabbing !important;
+}
+
+.cursor-grab {
+  cursor: grab !important;
+}

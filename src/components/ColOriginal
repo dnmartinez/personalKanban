@@ -1,0 +1,47 @@
+
+import AddTaskBtn from "./buttons/AddTaskBtn"
+import {Column as ColumnType, Id} from '../types'
+
+interface ColumnProps {
+	column: ColumnType
+	borderColor: string
+	textColor: string
+	deleteColumn: (id: Id) => void
+	updateColumn: (id: Id, title: string) => void
+	createTask: (columnId: string) => void
+}
+export default function Column({
+	column,
+	borderColor = 'bg-black',
+	textColor = 'text-white',
+}: ColumnProps) {
+	return (
+		<>
+			<div
+				className={`flex flex-col border-4 rounded-3xl px-8 py-6 ${borderColor}  h-full`}
+			>
+				<div
+					className={`flex flex-row justify-between border-b-4 ${borderColor} mb-4`}
+				>
+					<h1 className={`sticky top-0 pb-2 font-bold text-xl `}>
+						{column.title}
+					</h1>
+					<AddTaskBtn />
+				</div>
+				<div className={`flex-1 overflow-y-auto `}>
+					{Array.isArray(column.content) ? (
+						// If content is an array, map over it and render each item
+						column.content.map((content, index) => (
+							<p key={index} className={`mb-2 ${textColor}`}>
+								{content}
+							</p>
+						))
+					) : (
+						// If content is a string, render it directly
+						<p className={`${textColor}`}>{column.content}</p>
+					)}
+				</div>
+			</div>
+		</>
+	)
+}
